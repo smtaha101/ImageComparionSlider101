@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Slider</title>
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container
+    {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .container .slide
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .container .slide.slide1
+    {
+        background: url("img1.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .container .slide.slide2
+    {
+        background: url("img2.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        left: 50%;
+    }
+</style>
+<body>
+    <section class="container">
+        <div class="slide slide1"></div>
+        <div class="slide slide2" id="slide"></div>
+    </section>
+    <script>
+        var slide = document.getElementById("slide");
+        window.onmousemove = function(e)
+        {
+            var x = e.clientX;
+            slide.style.left = x+"px";
+        }
+
+    </script>
+</body>
+</html>
